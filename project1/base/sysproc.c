@@ -77,6 +77,30 @@ sys_sleep(void)
   return 0;
 }
 
+int
+sys_shutdown(void)
+{
+	outw(0xB004, 0x0|0x2000);
+	outw(0x604, 0x0|0x2000);
+}
+
+int
+sys_exit2(void)
+{
+  int status;
+
+  
+  if (argint(0, &status) < 0)
+    return -1;
+
+  cprintf("Process exit2 status: %d\n", status);
+  
+  exit();  
+  return 0;  
+}
+
+
+
 // return how many clock tick interrupts have occurred
 // since start.
 int
