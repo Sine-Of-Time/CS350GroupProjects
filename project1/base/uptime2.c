@@ -7,10 +7,10 @@
    REMEMBER to disable the stub functions (by commenting the following macro) to 
    allow your implementation to work properly. */
 
-#define STUB_FUNCS
-#ifdef STUB_FUNCS
-int uptime2(int i) {return 0;}
-#endif
+//#define STUB_FUNCS
+//#ifdef STUB_FUNCS
+//int uptime2(int i) {return 0;}
+//#endif
 
 
 /* IMPORTANT INSTRUCTION: the code below should not be changed. 
