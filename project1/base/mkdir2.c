@@ -2,6 +2,8 @@
 #include "stat.h"
 #include "user.h"
 
+//hi
+
 /* ATTENTION: to ensure correct compilation of the base code, 
    stub functions for the system call user space wrapper functions are provided. 
    REMEMBER to disable the stub functions (by commenting the following macro) to 
