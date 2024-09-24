@@ -107,3 +107,26 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int
+sys_uptime2(void)
+{
+  int num;
+  uint xticks;
+
+  if(argint(0, &num) < 0)
+    return -1;
+
+  acquire(&tickslock);
+  xticks = ticks;
+  release(&tickslock);
+
+  if(num == 1)
+    return xticks;
+  else if(num == 2)
+    return xticks/100;
+  else if(num == 3)
+    return (xticks/(100*60));
+  else
+    return -1;
+}
