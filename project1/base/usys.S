@@ -31,3 +31,6 @@ SYSCALL(sleep)
 SYSCALL(uptime)
 SYSCALL(shutdown)
 SYSCALL(shutdown2)
+
+
+SYSCALL(uptime2)
