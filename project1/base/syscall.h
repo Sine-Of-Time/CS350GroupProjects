@@ -22,5 +22,4 @@
 #define SYS_close  21
 #define SYS_shutdown 22
 #define SYS_exit2 23
-#define SYS_shutdown2 23
-#define SYS_uptime2 26
+#define SYS_echo2 24
