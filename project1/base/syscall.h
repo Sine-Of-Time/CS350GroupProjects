@@ -24,3 +24,4 @@
 #define SYS_exit2 23
 #define SYS_shutdown2 23
 #define SYS_uptime2 26
+#define SYS_mkdir2 27
