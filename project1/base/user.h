@@ -23,6 +23,7 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int mkdir2(char *d1, char *d2);
 
 // ulib.c
 int stat(char*, struct stat*);
