@@ -9,10 +9,10 @@
    REMEMBER to disable the stub functions (by commenting the following macro) to 
    allow your implementation to work properly. */
 
-#define STUB_FUNCS
+/*#define STUB_FUNCS
 #ifdef STUB_FUNCS
 void mkdir2(char * d1, char* d2) {}
-#endif
+#endif*/
 
 
 /* IMPORTANT INSTRUCTION: the code below should not be changed. 

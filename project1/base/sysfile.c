@@ -443,3 +443,45 @@ sys_pipe(void)
   fd[1] = fd1;
   return 0;
 }
+
+int 
+sys_mkdir2(void)
+{
+    char *dir1, *dir2;
+    struct inode *ip1, *ip2;
+
+    if (argstr(0, &dir1) < 0 || argstr(1, &dir2) < 0) {
+        cprintf("Failed to fetch directory names\n");
+        return -1;
+    }
+
+    cprintf("Creating directories: %s and %s\n", dir1, dir2);
+
+    begin_op();
+
+    ip1 = create(dir1, T_DIR, 0, 0);
+    if (ip1 == 0) {
+        cprintf("Failed to create first directory: %s\n", dir1);
+        end_op();
+        return -1;
+    }
+    iunlockput(ip1);
+    
+    end_op();
+    
+    begin_op();
+
+    ip2 = create(dir2, T_DIR, 0, 0);
+    if (ip2 == 0) {
+        cprintf("Failed to create second directory: %s\n", dir2);
+        end_op();
+        return -1;
+    }
+    iunlockput(ip2);
+
+    cprintf("Successfully created directories\n");
+
+    end_op();
+
+    return 0;
+}
