@@ -23,7 +23,7 @@
 #define SYS_shutdown 22
 #define SYS_shutdown2 23
 #define SYS_echo2 24
-#define SYS_exit2 25 //To resolve merge conflict, making exit2 sys call numer 25 -Kian F
+#define SYS_exit2 25 //To resolve merge conflict, making exit2 sys call number 25 -Kian F
 #define SYS_uptime2 26
 #define SYS_mkdir2 27
 
