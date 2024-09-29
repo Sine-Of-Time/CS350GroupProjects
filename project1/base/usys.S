@@ -31,6 +31,8 @@ SYSCALL(sleep)
 SYSCALL(uptime)
 SYSCALL(shutdown)
 SYSCALL(exit2)
+SYSCALL(echo2)
 SYSCALL(shutdown2)
 SYSCALL(uptime2)
 SYSCALL(mkdir2)
+

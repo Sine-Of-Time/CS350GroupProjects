@@ -80,7 +80,6 @@ sys_sleep(void)
 int
 sys_shutdown(void)
 {
-
 	outw(0xB004, 0x0|0x2000);
 	outw(0x604, 0x0|0x2000);
 }
@@ -100,16 +99,19 @@ sys_exit2(void)
   return 0;  
 }
 
-int 
-sys_shutdown2(void) {
-    char *msg;
-    if (argstr(0, &msg) < 0)
-        return -1;
-    cprintf("%s\n", msg);
-    outw(0xB004, 0x0|0x2000);
-    outw(0x604, 0x0|0x2000);
-    return 0;
+int
+sys_echo2(void)
+{
+  char *text;
+  
+  if (argstr(0, &text) < 0)
+    return -1;
+
+  cprintf("%s\n", text);
+  return 0;
 }
+
+
 
 // return how many clock tick interrupts have occurred
 // since start.
@@ -122,27 +124,4 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
-}
-
-int
-sys_uptime2(void)
-{
-  int num;
-  uint xticks;
-
-  if(argint(0, &num) < 0)
-    return -1;
-
-  acquire(&tickslock);
-  xticks = ticks;
-  release(&tickslock);
-
-  if(num == 1)
-    return xticks;
-  else if(num == 2)
-    return xticks/100;
-  else if(num == 3)
-    return (xticks/(100*60));
-  else
-    return -1;
 }
